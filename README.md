@@ -2,6 +2,6 @@ Contains colorfull console extension. Allows to write colored messages to consol
 
 Usage example:
 
-'C#
+`C#
  ColorfullConsole.WriteLine("gray " + "green".Green() + " red".Red() + " blue".Blue());
- '
+ `
