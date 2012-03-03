@@ -1,13 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Concurrent;
+using System.Threading;
 
 namespace Restuta.ConsoleExtensions.Colorfull
 {
     public class ColorfullString
     {
-        private static readonly Queue<ColorfullString> StringsQueue = new Queue<ColorfullString>();
         private ConsoleColor? color;
+
+        private static readonly ConcurrentDictionary<int, Queue<ColorfullString>> PerThreadQueues =
+            new ConcurrentDictionary<int, Queue<ColorfullString>>();
+
+        private static Queue<ColorfullString> StringsQueue { get { return GetThreadSpecificQueue(); } }
+        private string Value { get; set; }
 
         public ColorfullString(string value, ConsoleColor consoleColor = ConsoleColor.Gray)
         {
@@ -19,8 +26,6 @@ namespace Restuta.ConsoleExtensions.Colorfull
                 StringsQueue.Enqueue(this);
             }
         }
-
-        public string Value { get; private set; }
 
         //ColorfullString to string
         public static implicit operator string(ColorfullString colorfullString)
@@ -42,7 +47,7 @@ namespace Restuta.ConsoleExtensions.Colorfull
             {
                 StringsQueue.Enqueue(a);
             }
-            
+
             StringsQueue.Enqueue(b);
 
             return a;
@@ -61,7 +66,7 @@ namespace Restuta.ConsoleExtensions.Colorfull
 
         public static void WriteToConsole()
         {
-            while(StringsQueue.Any())
+            while (StringsQueue.Any())
             {
                 var colorfullString = StringsQueue.Dequeue();
 
@@ -70,6 +75,25 @@ namespace Restuta.ConsoleExtensions.Colorfull
                 Console.Write(colorfullString.Value);
                 Console.ForegroundColor = currentColor;
             }
+        }
+
+        private static Queue<ColorfullString> GetThreadSpecificQueue()
+        {
+            Queue<ColorfullString> queue;
+            if (!PerThreadQueues.TryGetValue(Thread.CurrentThread.ManagedThreadId, out queue))
+            {
+                queue = CreateQueueForCurrentThread();
+            }
+
+            return queue;
+        }
+
+        private static Queue<ColorfullString> CreateQueueForCurrentThread()
+        {
+            Queue<ColorfullString> colorfullStrings = new Queue<ColorfullString>();
+            PerThreadQueues[Thread.CurrentThread.ManagedThreadId] = colorfullStrings;
+
+            return colorfullStrings;
         }
     }
 }
