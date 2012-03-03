@@ -1,6 +1,7 @@
-Contains colorfull console extension. Allows to write colored messages to console in an easy way.
+#Colorfull console extension. 
+Allows to write colored messages to console in an easy way.
 
-Usage example:
+####Usage example
 
 ```C#
  ColorfullConsole.WriteLine("gray " + "green".Green() + " red".Red() + " blue".Blue());
