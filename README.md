@@ -23,3 +23,8 @@ Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine(" blue");
 Console.ResetColor();
 ```
+
+####Namespace to include
+```C# 
+using Restuta.ConsoleExtensions.Colorfull;
+```
