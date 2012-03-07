@@ -4,7 +4,7 @@ namespace Restuta.ConsoleExtensions.Colorfull
 {
     public static class ColorfullConsole
     {
-        private static object syncObject = new object();
+        private static readonly object syncObject = new object();
 
         public static void WriteLine(ColorfullString @string)
         {
