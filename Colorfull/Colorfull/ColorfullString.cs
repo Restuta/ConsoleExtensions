@@ -53,12 +53,6 @@ namespace Restuta.ConsoleExtensions.Colorfull
             return a;
         }
 
-        public ColorfullString Red()
-        {
-            color = ConsoleColor.Red;
-            return this;
-        }
-
         public override string ToString()
         {
             return this;
