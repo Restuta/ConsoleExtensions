@@ -4,84 +4,84 @@ namespace Restuta.ConsoleExtensions.Colorfull
 {
     public static class StringExtensions
     {
-        public static ColorfullString Black(this string source)
+        public static ColorfulString Black(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Black);
+            return new ColorfulString(source, ConsoleColor.Black);
         }
 
-        public static ColorfullString Blue(this string source)
+        public static ColorfulString Blue(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Blue);
+            return new ColorfulString(source, ConsoleColor.Blue);
         }
 
-        public static ColorfullString Cyan(this string source)
+        public static ColorfulString Cyan(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Cyan);
+            return new ColorfulString(source, ConsoleColor.Cyan);
         }
 
-        public static ColorfullString DarkBlue(this string source)
+        public static ColorfulString DarkBlue(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkBlue);
+            return new ColorfulString(source, ConsoleColor.DarkBlue);
         }
 
-        public static ColorfullString DarkCyan(this string source)
+        public static ColorfulString DarkCyan(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkCyan);
+            return new ColorfulString(source, ConsoleColor.DarkCyan);
         }
 
-        public static ColorfullString DarkGray(this string source)
+        public static ColorfulString DarkGray(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkGray);
+            return new ColorfulString(source, ConsoleColor.DarkGray);
         }
 
-        public static ColorfullString DarkGreen(this string source)
+        public static ColorfulString DarkGreen(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkGreen);
+            return new ColorfulString(source, ConsoleColor.DarkGreen);
         }
 
-        public static ColorfullString DarkMagenta(this string source)
+        public static ColorfulString DarkMagenta(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkMagenta);
+            return new ColorfulString(source, ConsoleColor.DarkMagenta);
         }
 
-        public static ColorfullString DarkRed(this string source)
+        public static ColorfulString DarkRed(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkRed);
+            return new ColorfulString(source, ConsoleColor.DarkRed);
         }
 
-        public static ColorfullString DarkYellow(this string source)
+        public static ColorfulString DarkYellow(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.DarkYellow);
+            return new ColorfulString(source, ConsoleColor.DarkYellow);
         }
 
-        public static ColorfullString Gray(this string source)
+        public static ColorfulString Gray(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Gray);
+            return new ColorfulString(source, ConsoleColor.Gray);
         }
 
-        public static ColorfullString Green(this string source)
+        public static ColorfulString Green(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Green);
+            return new ColorfulString(source, ConsoleColor.Green);
         }
 
-        public static ColorfullString Magenta(this string source)
+        public static ColorfulString Magenta(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Magenta);
+            return new ColorfulString(source, ConsoleColor.Magenta);
         }
 
-        public static ColorfullString Red(this string source)
+        public static ColorfulString Red(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Red);
+            return new ColorfulString(source, ConsoleColor.Red);
         }
 
-        public static ColorfullString White(this string source)
+        public static ColorfulString White(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.White);
+            return new ColorfulString(source, ConsoleColor.White);
         }
 
-        public static ColorfullString Yellow(this string source)
+        public static ColorfulString Yellow(this string source)
         {
-            return new ColorfullString(source, ConsoleColor.Yellow);
+            return new ColorfulString(source, ConsoleColor.Yellow);
         }
     }
 }

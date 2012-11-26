@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Colorfull\ColorfullConsole.cs" />
-    <Compile Include="Colorfull\ColorfullString.cs" />
+    <Compile Include="Colorfull\ColorfulString.cs" />
     <Compile Include="Colorfull\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

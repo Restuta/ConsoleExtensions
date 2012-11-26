@@ -2,24 +2,16 @@ using System;
 
 namespace Restuta.ConsoleExtensions.Colorfull
 {
-    public static class ColorfullConsole
+    public static class ColorfulConsole
     {
         private static readonly object syncObject = new object();
 
-        public static void WriteLine(ColorfullString @string)
+        public static void WriteLine(ColorfulString @string)
         {
             lock (syncObject)
             {
-                ColorfullString.WriteToConsole();
+                ColorfulString.WriteToConsole();
                 Console.WriteLine();
-            }
-        }
-
-        public static void Write(ColorfullString @string)
-        {
-            lock (syncObject)
-            {
-                ColorfullString.WriteToConsole();
             }
         }
     }

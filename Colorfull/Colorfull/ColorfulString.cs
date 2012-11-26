@@ -6,17 +6,17 @@ using System.Threading;
 
 namespace Restuta.ConsoleExtensions.Colorfull
 {
-    public class ColorfullString
+    public class ColorfulString
     {
         private ConsoleColor? color;
 
-        private static readonly ConcurrentDictionary<int, Queue<ColorfullString>> PerThreadQueues =
-            new ConcurrentDictionary<int, Queue<ColorfullString>>();
+        private static readonly ConcurrentDictionary<int, Queue<ColorfulString>> PerThreadQueues =
+            new ConcurrentDictionary<int, Queue<ColorfulString>>();
 
-        private static Queue<ColorfullString> StringsQueue { get { return GetThreadSpecificQueue(); } }
+        private static Queue<ColorfulString> StringsQueue { get { return GetThreadSpecificQueue(); } }
         private string Value { get; set; }
 
-        public ColorfullString(string value, ConsoleColor consoleColor = ConsoleColor.Gray)
+        public ColorfulString(string value, ConsoleColor consoleColor = ConsoleColor.Gray)
         {
             Value = value;
             color = consoleColor;
@@ -27,21 +27,21 @@ namespace Restuta.ConsoleExtensions.Colorfull
             }
         }
 
-        //ColorfullString to string
-        public static implicit operator string(ColorfullString colorfullString)
+        //ColorfulString to string
+        public static implicit operator string(ColorfulString colorfulString)
         {
-            return colorfullString.Value;
+            return colorfulString.Value;
         }
 
-        //string to ColorfullString 
-        public static implicit operator ColorfullString(string @string)
+        //string to ColorfulString 
+        public static implicit operator ColorfulString(string @string)
         {
-            var colorfullString = new ColorfullString(@string);
-            //stringsQueue.Enqueue(colorfullString);
+            var colorfullString = new ColorfulString(@string);
+            //stringsQueue.Enqueue(ColorfulString);
             return colorfullString;
         }
 
-        public static ColorfullString operator +(ColorfullString a, ColorfullString b)
+        public static ColorfulString operator +(ColorfulString a, ColorfulString b)
         {
             if (!StringsQueue.Any())
             {
@@ -71,9 +71,9 @@ namespace Restuta.ConsoleExtensions.Colorfull
             }
         }
 
-        private static Queue<ColorfullString> GetThreadSpecificQueue()
+        private static Queue<ColorfulString> GetThreadSpecificQueue()
         {
-            Queue<ColorfullString> queue;
+            Queue<ColorfulString> queue;
             if (!PerThreadQueues.TryGetValue(Thread.CurrentThread.ManagedThreadId, out queue))
             {
                 queue = CreateQueueForCurrentThread();
@@ -82,9 +82,9 @@ namespace Restuta.ConsoleExtensions.Colorfull
             return queue;
         }
 
-        private static Queue<ColorfullString> CreateQueueForCurrentThread()
+        private static Queue<ColorfulString> CreateQueueForCurrentThread()
         {
-            Queue<ColorfullString> colorfullStrings = new Queue<ColorfullString>();
+            Queue<ColorfulString> colorfullStrings = new Queue<ColorfulString>();
             PerThreadQueues[Thread.CurrentThread.ManagedThreadId] = colorfullStrings;
 
             return colorfullStrings;
