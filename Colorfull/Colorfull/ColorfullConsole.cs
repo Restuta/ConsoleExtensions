@@ -14,5 +14,13 @@ namespace Restuta.ConsoleExtensions.Colorfull
                 Console.WriteLine();
             }
         }
+
+        public static void Write(ColorfulString @string)
+        {
+            lock (syncObject)
+            {
+                ColorfulString.WriteToConsole();
+            }
+        }
     }
 }
