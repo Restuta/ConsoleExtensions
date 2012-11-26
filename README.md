@@ -1,4 +1,4 @@
-#Colorfull console extension
+#Colorful console extension
 Allows to write colored messages to console in an easy way.
 
 ####Usage example
